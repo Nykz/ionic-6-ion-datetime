@@ -1,0 +1,23 @@
+<ion-item button="true" id="open-date-input">
+  <ion-label>Date</ion-label>
+  <ion-text 
+    *ngIf="dateValue" 
+    slot="end">
+    <!-- {{ dateValue | date: 'MMM d, y'}} -->
+    {{ dateValue | date: 'h:mm a'}}
+  </ion-text>
+  <ion-popover 
+    [dismissOnSelect]="true" 
+    trigger="open-date-input" 
+    show-backdrop="false" 
+    side="end">
+    <ng-template>
+     <app-date-time-picker
+      [value]="dateValue"
+      type="time"
+      [date_format]="format"
+      (datePickerValue)="change($event)">
+    </app-date-time-picker>
+    </ng-template>
+  </ion-popover>
+</ion-item>

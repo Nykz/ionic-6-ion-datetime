@@ -1,0 +1,9 @@
+<ion-datetime 
+  locale="en-IN"
+  #datetime
+  [value]="value"
+  (ionChange)="change(datetime.value)"
+  [presentation]="type"  
+  [min]="min"
+  [max]="max">
+</ion-datetime>
